@@ -84,7 +84,7 @@ header .icons span:last-child{
     
 }
 .days li:hover::before{
-    background: #00a6fb;
+    background: #ff4d6d;
 
 }
 .days li.active::before{
