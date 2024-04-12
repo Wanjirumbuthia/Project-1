@@ -105,8 +105,8 @@ header .icons span:last-child{
 
 .input-date button {
     padding: 8px 4px;
-    background-color:#00a6fb(211, 100%, 50%);
-    color: #ccc;
+    background-color: hsl(211, 100%, 50%);
+    color: #fff;
     border: none;
     border-radius: 4px;
     cursor: pointer;
