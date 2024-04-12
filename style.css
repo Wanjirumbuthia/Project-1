@@ -90,3 +90,27 @@ header .icons span:last-child{
 .days li.active::before{
     background: #00a6fb;
 }
+.input-date {
+    margin-top: 20px;
+    
+}
+
+.input-date input[type="text"] {
+    padding: 2px;
+    margin-right: 5px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+}
+
+.input-date button {
+    padding: 8px 4px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.input-date button:hover {
+    background-color: #0056b3;
+}
