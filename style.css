@@ -90,6 +90,7 @@ header .icons span:last-child{
 .days li.active::before{
     background: #00a6fb;
 }
+/* Input date styling */
 .input-date {
     margin-top: 20px;
     
@@ -114,3 +115,4 @@ header .icons span:last-child{
 .input-date button:hover {
     background-color: #0056b3;
 }
+
