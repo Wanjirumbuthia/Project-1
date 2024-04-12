@@ -1,3 +1,4 @@
+const BaseUrl ="https://www.hebcal.com"
 const currentDate = document.querySelector(".current-date"),
 daysTag= document.querySelector(".days"),
 previousNextIcon= document.querySelectorAll(".icons span ");
@@ -6,7 +7,8 @@ let date = new Date()
 currentYear = date.getFullYear();
 currentMonth =date.getMonth();
 
-const months = ["January","February","March","April","May","June","July","August","September","October","November","December", ];
+const months = ["ינואר", "פברואר", "מרץ", "אפריל", "מאי", "יוני", "יולי", "אוגוסט", "ספטמבר", "אוקטובר", "נובמבר", "דצמבר"
+, ];
 const renderCalender = () => {
     let firstDayofMonth = new Date(currentYear,currentMonth,1 ).getDay(),
     lastDateofMonth = new Date(currentYear,currentMonth +1, 0 ).getDate(),
