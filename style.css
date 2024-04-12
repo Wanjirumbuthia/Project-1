@@ -63,7 +63,7 @@ header .icons span:last-child{
 
 }
 .days li.inactive{
-    color: #fff;
+    color: #adb5bd;
 }
 .calender .days li{
     z-index: 1;
@@ -90,7 +90,7 @@ header .icons span:last-child{
 .days li.active::before{
     background: #00a6fb;
 }
-/* Input date styling */
+
 .input-date {
     margin-top: 20px;
     
