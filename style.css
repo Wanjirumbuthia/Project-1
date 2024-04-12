@@ -63,7 +63,7 @@ header .icons span:last-child{
 
 }
 .days li.inactive{
-    color: #adb5bd;
+    color: #fff;
 }
 .calender .days li{
     z-index: 1;
