@@ -88,7 +88,7 @@ header .icons span:last-child{
 
 }
 .days li.active::before{
-    background: #aaa;
+    background: #00a6fb;
 }
 
 .input-date {
