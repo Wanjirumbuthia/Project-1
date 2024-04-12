@@ -1,25 +1,26 @@
 {
   "BaseUrl": "https://www.hebcal.com",
+  "currentDateSelector": ".current-date",
+  "daysTagSelector": ".days",
+  "previousNextIconSelector": ".icons span",
   "currentYear": 2024,
   "currentMonth": 4,
   "months": ["ינואר", "פברואר", "מרץ", "אפריל", "מאי", "יוני", "יולי", "אוגוסט", "ספטמבר", "אוקטובר", "נובמבר", "דצמבר"],
-  "renderCalender": {
+  "renderCalendarFunction": {
     "firstDayofMonth": 3,
     "lastDateofMonth": 30,
     "lastDayofMonth": 5,
     "lastDateofLastMonth": 29
   },
-  "fetchData": {
-    "Url": "https://www.hebcal.com/hebcal?v=1&cfg=json&maj=on&min=on&mod=on&nx=on&year=now&month=5&ss=on&mf=on&c=on&geo=geoname&geonameid=3448439&M=on&s=on"
+  "fetchDataFunction": {
+    "userInput": "?month=5",
+    "apiEndpoint": "https://www.hebcal.com"
   },
-  "previousNextIcon": [
+  "eventListeners": [
     {
-      "id": "prev",
-      "action": "decreaseMonth"
-    },
-    {
-      "id": "next",
-      "action": "increaseMonth"
+      "element": "previousNextIcon",
+      "eventType": "click",
+      "callbackFunction": "adjustMonth"
     }
   ]
 }
