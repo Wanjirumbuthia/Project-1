@@ -10,7 +10,7 @@ let date = new Date(),
 
 const months = ["ינואר", "פברואר", "מרץ", "אפריל", "מאי", "יוני", "יולי", "אוגוסט", "ספטמבר", "אוקטובר", "נובמבר", "דצמבר"];
 
-const renderCalendar = (monthData) => {
+const renderCalender = (monthData) => {
     const firstDayofMonth = new Date(currentYear, currentMonth, 1).getDay(),
         lastDateofMonth = new Date(currentYear, currentMonth + 1, 0).getDate(),
         lastDayofMonth = new Date(currentYear, currentMonth, lastDateofMonth).getDay(),
@@ -34,23 +34,30 @@ const renderCalendar = (monthData) => {
     daysTag.innerHTML = liTag;
 }
 
-const fetchData = (userInput) => {
-    fetch(`${BaseUrl}${userInput}`)
-        .then((response) => response.json())
-        .then((data) => {
-            console.log(data); // Log the data to the console
-            renderCalendar(data); // Call the renderCalendar function with the fetched data
-        })
-        .catch((error) => {
-            console.error("Error fetching data:", error);
-        });
+const fetchData = async () => {
+    try {
+        const response = await fetch(`${BaseUrl}/hebcal?v=1&cfg=json&maj=on&min=on&mod=on&nx=on&year=now&month=${currentMonth + 1}&ss=on&mf=on&c=on&geo=geoname&geonameid=3448439&M=on&s=on`);
+        const data = await response.json();
+        renderCalender(data);
+    } catch (error) {
+        console.error("Error fetching data:", error);
+    }
 }
 
-fetchData(`?month=${currentMonth + 1}`); // Fetch data for the current month
+fetchData();
 
 previousNextIcon.forEach(icon => {
-    icon.addEventListener("click", () => {
-        const userInput = icon.id === "prev" ? `?month=${currentMonth}` : `?month=${currentMonth + 2}`; // Adjust the month input based on the icon clicked
-        fetchData(userInput); // Call fetchData with the user input
+    icon.addEventListener("click", async () => {
+        currentMonth = icon.id === "prev" ? currentMonth - 1 : currentMonth + 1;
+
+        if (currentMonth < 0 || currentMonth > 11) {
+            date = new Date(currentYear, currentMonth);
+            currentYear = date.getFullYear();
+            currentMonth = date.getMonth();
+        } else {
+            date = new Date;
+        }
+
+        await fetchData();
     })
 })
